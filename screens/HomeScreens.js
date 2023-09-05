@@ -6,7 +6,6 @@ import { Data, statusCount } from '../constants/Data'
 import ActionButton from '../components/ActionButton'
 import KehadiranButton from '../components/KehadiranButton'
 import Status from '../components/Status'
-import ButtonBack from '../components/ButtonBack'
 
 const HomeScreens = () => {
     const bulan = [
@@ -14,8 +13,8 @@ const HomeScreens = () => {
     ]
     const date = new Date()
     return (
-        <View className="flex-1 flex-col justify-center item" style={{backgroundColor:Color.Background}}>
-            <View className="flex px-5" style={{backgroundColor: Color.Background}}>
+        <View className="flex-1 flex-col justify-center item" style={{backgroundColor:Color.Putih}}>
+            <View className="flex px-5" style={{backgroundColor: Color.Putih}}>
                 <SafeAreaView>
                     <View className="p-5 flex-col bg-white rounded-2xl mt-3" style={{elevation:3}}>
                         <View className="flex-row justify-between">

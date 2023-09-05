@@ -8,8 +8,11 @@ import CreatePasswordScreen from './screens/CreatePasswordScreen'
 import LoginUserScreens from './screens/LoginUserScreens'
 import HomeScreens from './screens/HomeScreens'
 import HistoryScreen from './screens/HistoryScreen'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 export default function App() {
+  const Stack = createNativeStackNavigator()
   const [fontsLoaded] = useFonts({
     regular : require("./assets/fonts/Poppins-Regular.ttf"),
     light : require("./assets/fonts/Poppins-Light.ttf"),
@@ -27,6 +30,15 @@ if (!fontsLoaded){
   return null
 }
   return (
-    <HistoryScreen/>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name='Home' component={HomeScreens}/>
+        <Stack.Screen name='Profile' component={HistoryScreen}/>
+        <Stack.Screen name='History' component={HistoryScreen}/>
+        <Stack.Screen name='Izin' component={HistoryScreen}/>
+        <Stack.Screen name='Sakit' component={HistoryScreen}/>
+        {/* <Stack.Screen name='Home' component={HomeScreens}/> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
