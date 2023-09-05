@@ -10,6 +10,7 @@ import HomeScreens from './screens/HomeScreens'
 import HistoryScreen from './screens/HistoryScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import ProfileScreens from './screens/ProfileScreens'
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -33,7 +34,7 @@ if (!fontsLoaded){
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name='Home' component={HomeScreens}/>
-        <Stack.Screen name='Profile' component={HistoryScreen}/>
+        <Stack.Screen name='Profile' component={ProfileScreens}/>
         <Stack.Screen name='History' component={HistoryScreen}/>
         <Stack.Screen name='Izin' component={HistoryScreen}/>
         <Stack.Screen name='Sakit' component={HistoryScreen}/>
