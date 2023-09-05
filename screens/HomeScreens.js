@@ -1,20 +1,17 @@
-import { View, Text, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Color from '../constants/Color'
-import Profile from '../assets/svg/iconProfile.svg'
-import Izin from '../assets/svg/iconIzin.svg'
-import History from '../assets/svg/iconHistory.svg'
-import Sakit from '../assets/svg/iconSakit.svg'
-import Exit from '../assets/svg/iconExit.svg'
-import Hadir from '../assets/svg/iconHadir.svg'
-import Terlambat from '../assets/svg/iconTerlambat.svg'
 import { Data, statusCount } from '../constants/Data'
 import ActionButton from '../components/ActionButton'
 import KehadiranButton from '../components/KehadiranButton'
 import Status from '../components/Status'
 
 const HomeScreens = () => {
+    const bulan = [
+        "Januari", "Februari", "Maret", "April", "May", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ]
+    const date = new Date()
     return (
         <View className="flex-1 flex-col justify-center item" style={{backgroundColor:Color.Background}}>
             <View className="flex px-5" style={{backgroundColor: Color.Background}}>
@@ -31,8 +28,18 @@ const HomeScreens = () => {
                             </View>
                         </View>
                         <View className= " mt-11 rounded-sm" style={{borderWidth:0.5, borderColor:Color.AbuAbu}}  />
-                        <View className="flex-row justify-between my-5">
-                            <ActionButton data={Data}/>
+                        <View className="bg-white items-center justify-center my-5">
+                            <FlatList
+                                horizontal
+                                data={Data}
+                                renderItem={
+                                    ({item}) => (
+                                        <View className="mx-1">
+                                            <ActionButton btnName={item.btnName} icon={item.icon} />
+                                        </View>
+                                    )
+                                }
+                            />
                         </View>
                     </View>
                 </SafeAreaView>
@@ -44,8 +51,8 @@ const HomeScreens = () => {
                 </View>
                 <View className="mt-6 mb-3 flex-row gap-x-1">
                     <Text className="text-lg text-white" style={{fontFamily:'regular'}}>Absensi bulan</Text>
-                    <Text className="text-lg text-black" style={{fontFamily:'semibold'}}>Juli</Text>
-                    <Text className="text-lg text-white" style={{fontFamily:'semibold'}}>2023</Text>
+                    <Text className="text-lg text-black" style={{fontFamily:'semibold'}}>{bulan[date.getMonth()]}</Text>
+                    <Text className="text-lg text-white" style={{fontFamily:'semibold'}}>{date.getFullYear()}</Text>
                 </View>
                 <FlatList
                     data={statusCount}
