@@ -7,6 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import CreatePasswordScreen from './screens/CreatePasswordScreen'
 import LoginUserScreens from './screens/LoginUserScreens'
 import HomeScreens from './screens/HomeScreens'
+import HistoryScreen from './screens/HistoryScreen'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,7 +18,7 @@ export default function App() {
     medium : require("./assets/fonts/Poppins-Medium.ttf"),
     extrabold : require("./assets/fonts/Poppins-ExtraBold.ttf"),
   })
-  const onLayoutRootView = useCallback(async()=>{
+  const onLayoutRootView = useCallback( async () => {
     if(fontsLoaded){
       await SplashScreen.hideAsync();
     }
@@ -26,6 +27,6 @@ if (!fontsLoaded){
   return null
 }
   return (
-    <HomeScreens/>
+    <HistoryScreen/>
   )
 }
