@@ -1,7 +1,8 @@
-import { View, Text } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import ArrowLeft from '../assets/svg/iconArrowLeft.svg'
+import Color from '../constants/Color'
 
 const ButtonBack = () => {
     const navigation = useNavigation()
