@@ -8,6 +8,7 @@ import CreatePasswordScreen from './screens/CreatePasswordScreen'
 import LoginUserScreens from './screens/LoginUserScreens'
 import HomeScreens from './screens/HomeScreens'
 import HistoryScreen from './screens/HistoryScreen'
+import ProfileScreens from './screens/ProfileScreens'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,6 +28,6 @@ if (!fontsLoaded){
   return null
 }
   return (
-    <HistoryScreen/>
+    <ProfileScreens/>
   )
 }
