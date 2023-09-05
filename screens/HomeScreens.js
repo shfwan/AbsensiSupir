@@ -9,8 +9,10 @@ import Sakit from '../assets/svg/iconSakit.svg'
 import Exit from '../assets/svg/iconExit.svg'
 import Hadir from '../assets/svg/iconHadir.svg'
 import Terlambat from '../assets/svg/iconTerlambat.svg'
-import { Data } from '../constants/Data'
+import { Data, statusCount } from '../constants/Data'
 import ActionButton from '../components/ActionButton'
+import KehadiranButton from '../components/KehadiranButton'
+import Status from '../components/Status'
 
 const HomeScreens = () => {
     return (
@@ -31,56 +33,31 @@ const HomeScreens = () => {
                         <View className= " mt-11 rounded-sm" style={{borderWidth:0.5, borderColor:Color.AbuAbu}}  />
                         <View className="flex-row justify-between my-5">
                             <ActionButton data={Data}/>
-
                         </View>
                     </View>
                 </SafeAreaView>
             </View>
             <View className="flex-1 px-6 pt-6 mt-6" style={{borderTopLeftRadius:50, borderTopRightRadius:50, backgroundColor:Color.Hijau}} >
                 <View className="flex-row justify-between">
-                    <TouchableOpacity className="py-4 w-40 rounded-full" style={{backgroundColor:Color.Putih, elevation:3}}>
-                        <Text className="text-xl text-center" style={{fontFamily:'regular', color:Color.Hijau}}>Hadir</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity className="py-4 w-40 rounded-full" style={{backgroundColor:Color.Putih, elevation:3}}>
-                        <Text className="text-xl text-center" style={{fontFamily:'regular', color:Color.Hijau}}>Pulang</Text>
-                    </TouchableOpacity>
+                    <KehadiranButton text="Hadir"/>
+                    <KehadiranButton text="Pulang"/>
                 </View>
-                <Text className="text-lg mt-6 mb-3" style={{fontFamily:'regular', color:Color.Putih}} >Absensi bulan 
-                    <Text className="text-lg" style={{fontFamily:'semibold', color:Color.Hitam}}> Juli</Text>
-                    <Text className="text-lg" style={{fontFamily:'semibold', color:Color.Putih}}> 2023</Text>
-                </Text>
-                <View className="flex-row justify-between">
-                    <View className="w-40 justify-evenly items-center flex-row rounded-lg  p-5" style={{backgroundColor:Color.Putih}}>
-                        <Hadir/>
-                        <View className="items-center">
-                            <Text className="text-xl" style={{fontFamily:'semibold', color:Color.Hijau}}>Hadir</Text>
-                            <Text className="text-xl" style={{fontFamily:'semibold'}}>15</Text>
-                        </View>
-                    </View>
-                    <View className="w-40 justify-evenly items-center flex-row rounded-lg p-5" style={{backgroundColor:Color.Putih}}>
-                        <Izin stroke={Color.Hijau}/>
-                        <View className="items-center">
-                            <Text className="text-xl" style={{fontFamily:'semibold', color:Color.Hijau}}>Izin</Text>
-                            <Text className="text-xl" style={{fontFamily:'semibold'}}>1</Text>
-                        </View>
-                    </View>
+                <View className="mt-6 mb-3 flex-row gap-x-1">
+                    <Text className="text-lg text-white" style={{fontFamily:'regular'}}>Absensi bulan</Text>
+                    <Text className="text-lg text-black" style={{fontFamily:'semibold'}}>Juli</Text>
+                    <Text className="text-lg text-white" style={{fontFamily:'semibold'}}>2023</Text>
                 </View>
-                <View className="flex-row justify-between mt-5">
-                    <View className="w-40 justify-evenly items-center flex-row rounded-lg p-5" style={{backgroundColor:Color.Putih}}>
-                        <Sakit stroke={Color.Hijau}/>
-                        <View className="items-center">
-                            <Text className="text-xl" style={{fontFamily:'semibold', color:Color.Hijau}}>Sakit</Text>
-                            <Text className="text-xl" style={{fontFamily:'semibold'}}>3</Text>
-                        </View>
-                    </View>
-                    <View className="w-40 justify-evenly items-center flex-row rounded-lg p-5" style={{backgroundColor:Color.Putih}}>
-                        <Terlambat/>
-                        <View className="items-center">
-                            <Text className="text-xl" style={{fontFamily:'semibold', color:Color.Hijau}}>Terlambat</Text>
-                            <Text className="text-xl" style={{fontFamily:'semibold'}}>10</Text>
-                        </View>
-                    </View>
-                </View>
+                <FlatList
+                    data={statusCount}
+                    numColumns={2}
+                    renderItem={
+                        ({item}) => (
+                            <View className="m-1">
+                                <Status icon={item.icon} status={item.status} count={item.count}/>
+                            </View>
+                        )
+                    }
+                />
             </View>
         </View>
     )

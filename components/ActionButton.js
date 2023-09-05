@@ -5,7 +5,7 @@ import { FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const ActionButton = (props) => {
-    const navigation = useNavigation()
+    // const navigation = useNavigation()
     return (
         <View className="flex-1 flex-row justify-between">
             {

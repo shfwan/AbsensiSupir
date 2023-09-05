@@ -4,6 +4,8 @@ import Sakit from '../assets/svg/iconSakit.svg'
 import History from '../assets/svg/iconHistory.svg'
 import Exit from '../assets/svg/iconExit.svg'
 import Color from './Color'
+import Hadir from '../assets/svg/iconHadir.svg'
+import Terlambat from '../assets/svg/iconTerlambat.svg'
 
 export const Data =[
     {
@@ -31,4 +33,27 @@ export const Data =[
         icon: <Exit stroke={Color.Putih}/>,
         backgroundColor:Color.Hijau
     }
+]
+
+export const statusCount = [
+    {
+        status: "Hadir",
+        icon: <Hadir/>,
+        count: 13
+    },
+    {
+        status: "Izin",
+        icon: <Izin stroke={Color.Hijau}/>,
+        count: 2
+    },
+    {
+        status: "Sakit",
+        icon: <Sakit stroke={Color.Hijau}/>,
+        count: 3
+    },
+    {
+        status: "Terlambat",
+        icon: <Terlambat/>,
+        count: 5
+    },
 ]

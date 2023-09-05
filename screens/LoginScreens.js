@@ -13,10 +13,9 @@ const LoginScreens = () => {
   return (
     <View>
       <ImageBackground
-      source={require('../assets/images/background.png')}
-      resizeMode='cover'
-      style={{height:'100%'}}
-      >
+        source={require('../assets/images/background.png')}
+        resizeMode='cover'
+        style={{height:'100%'}}>
         <View className="items-center mt-24 mb-12">
           <Image source={require('../assets/images/dailydriver.png')}/>
         </View>
@@ -26,10 +25,13 @@ const LoginScreens = () => {
           <View className="flex-row p-2 mx-3 border rounded-md items-center" style={{borderColor:Color.AbuAbu}}>
             <Phone stroke={Color.Hitam}/>
             <TextInput
-            className="text-xl ml-3 w-60"
-            placeholder='081234567890'
-            keyboardType='number-pad'
-            />
+              className="text-xl ml-3 w-60"
+              placeholder='081234567890'
+              keyboardType='number-pad'
+              onChangeText={(text) => {
+                console.log(text)
+              }}
+              />
             <Check/>
           </View>
           <TouchableOpacity className="mx-3 my-6 p-3 rounded-md" style={{backgroundColor:Color.Hijau}}>
