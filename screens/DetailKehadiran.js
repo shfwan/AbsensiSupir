@@ -1,8 +1,18 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity,  } from 'react-native'
 import React from 'react'
+import Color from '../constants/Color'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import ButtonBack from '../components/ButtonBack'
+import { useNavigation, useRoute } from '@react-navigation/native'
+import MapView from 'react-native-maps'
+import Map from '../assets/svg/iconMap.svg'
+
+
 
 const DetailKehadiran = () => {
-  return (
+    const navigation = useNavigation()
+    const route = useRoute()
+    return (
     <View className="flex-1 px-3.5" style={{backgroundColor:Color.Putih}}>
             <SafeAreaView className="mt-3 flex-row items-center ">
                 <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -40,7 +50,7 @@ const DetailKehadiran = () => {
                     </Text>
                 </View>
             </View>
-        </View>
+    </View>
   )
 }
 

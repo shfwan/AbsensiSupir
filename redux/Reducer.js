@@ -1,7 +1,7 @@
 import { Category, Kalender } from "./Type"
 
 const initData = {
-    category: "",
+    category: "All",
     kalender: ""
 }
 

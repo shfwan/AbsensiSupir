@@ -17,13 +17,13 @@ import Age from '../assets/svg/iconAge.svg'
 
 const ProfileScreens = () => {
     return (
-        <View className="bg-white">
+        <View className="flex-1 bg-white">
             <ImageBackground
-            source={require('../assets/images/shape.png')}
-            resizeMode='cover'
-            style={{height:500}}
+                source={require('../assets/images/shape.png')}
+                resizeMode='cover'
+                style={{height:500}}
             >
-                <SafeAreaView className="flex mt-12 mb-10 px-4">
+                <SafeAreaView className="flex  mb-10 p-4">
                     <TouchableOpacity>
                         <ButtonBack/>
                     </TouchableOpacity>

@@ -8,7 +8,6 @@ import { useDispatch } from 'react-redux'
 const Category = ({data}) => {
     const dispatch = useDispatch()
     const [activeCategory, setActiveCategory] = useState(1)
-
     return (
         <FlatList 
             horizontal
