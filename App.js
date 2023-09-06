@@ -9,6 +9,7 @@ import LoginUserScreens from './screens/LoginUserScreens'
 import HomeScreens from './screens/HomeScreens'
 import HistoryScreen from './screens/HistoryScreen'
 import ProfileScreens from './screens/ProfileScreens'
+import DetailKehadiran from './screens/DetailKehadiran'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -28,6 +29,6 @@ if (!fontsLoaded){
   return null
 }
   return (
-    <ProfileScreens/>
+    <DetailKehadiran/>
   )
 }
