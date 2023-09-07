@@ -14,6 +14,7 @@ import ProfileScreens from './screens/ProfileScreens'
 import DetailKehadiran from './screens/DetailKehadiran'
 import SakitScreens from './screens/SakitScreens'
 import IzinScreens from './screens/IzinScreens'
+import HadirScreens from './screens/HadirScreens'
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -34,17 +35,18 @@ if (!fontsLoaded){
   return null
 }
   return (
-    
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name='Home' component={HomeScreens}/>
-        <Stack.Screen name='Profile' component={ProfileScreens}/>
-        <Stack.Screen name='History' component={HistoryScreen}/>
-        <Stack.Screen name='Izin' component={IzinScreens}/>
-        <Stack.Screen name='Sakit' component={SakitScreens}/>
-        {/* <Stack.Screen name='Home' component={HomeScreens}/> */}
-        <Stack.Screen name='DetailKehadiran' component={DetailKehadiran}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <HadirScreens/>
+    // <NavigationContainer>
+    //   <Stack.Navigator screenOptions={{headerShown: false}}>
+    //     <Stack.Screen name='Home' component={HomeScreens}/>
+    //     <Stack.Screen name='Profile' component={ProfileScreens}/>
+    //     <Stack.Screen name='History' component={HistoryScreen}/>
+    //     <Stack.Screen name='Izin' component={IzinScreens}/>
+    //     <Stack.Screen name='Sakit' component={SakitScreens}/>
+    //     {/* <Stack.Screen name='Home' component={HomeScreens}/> */}
+    //     <Stack.Screen name='DetailKehadiran' component={DetailKehadiran}/>
+    //     <Stack.Screen name='Hadir' component={HadirScreens} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
   )
 }

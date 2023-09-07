@@ -31,7 +31,6 @@ const IzinScreens = () => {
             <TouchableOpacity className="mt-5 p-2 rounded-full" style={{backgroundColor:Color.Hijau}}>
                 <Text className="text-center text-xl" style={{fontFamily:'semibold', color:Color.Putih}}>Kirim</Text>
             </TouchableOpacity>
-            
     </View>
   )
 }

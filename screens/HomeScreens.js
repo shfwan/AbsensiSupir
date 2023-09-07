@@ -6,8 +6,11 @@ import { Data, statusCount } from '../constants/Data'
 import ActionButton from '../components/ActionButton'
 import KehadiranButton from '../components/KehadiranButton'
 import Status from '../components/Status'
+import { TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 const HomeScreens = () => {
+    const navigation = useNavigation()
     const bulan = [
         "Januari", "Februari", "Maret", "April", "May", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"
     ]
@@ -46,7 +49,9 @@ const HomeScreens = () => {
             </View>
             <View className="flex-1 px-6 pt-6 mt-6" style={{borderTopLeftRadius:50, borderTopRightRadius:50, backgroundColor:Color.Hijau}} >
                 <View className="flex-row justify-between">
-                    <KehadiranButton text="Hadir"/>
+                    <TouchableOpacity  onPress={() => navigation.navigate('Hadir')}>
+                        <KehadiranButton text="Hadir" />
+                    </TouchableOpacity>
                     <KehadiranButton text="Pulang"/>
                 </View>
                 <View className="mt-6 mb-3 flex-row gap-x-1">
