@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Alert, Modal } from 'react-native'
+import { View, Text, TouchableOpacity, Alert, Modal, useWindowDimensions } from 'react-native'
 import React, { useState } from 'react'
 import Color from '../constants/Color';
 import { useNavigation } from '@react-navigation/native';
@@ -6,18 +6,19 @@ import { data } from '../constants/Data';
 
 const ActionButton = (props) => {
     const navigation = useNavigation()
+    const window = useWindowDimensions()
     const [isModal, setModal] = useState(false)
     const logOut = () => { props.btnName === "Keluar" ? setModal(true) : navigation.navigate(props.btnName, ...data) }
     return (
         <View className="flex-col">
             <TouchableOpacity 
-                className="p-2 rounded-lg" 
+                className="p-3 rounded-lg items-center " 
                 activeOpacity={0.5}
                 style={{backgroundColor: props.btnName === "Keluar" ? Color.Merah : Color.Hijau}}
                 onPress={logOut}>
                 {props.icon}
             </TouchableOpacity>
-            <Text className="text-base text-center" style={{fontFamily:'regular'}}>{props.btnName}</Text>
+            <Text className={window.width < 390 ? "text-sm text-center" : "text-lg text-center"} style={{fontFamily:'regular'}}>{props.btnName}</Text>
             <Modal transparent={true} visible={isModal}>
                 <View className="flex-1 items-center justify-center " style={{backgroundColor: "#00000099"}}>
                     <View className="w-72 h-fit items-center justify-center bg-white flex-col p-4 rounded-2xl">

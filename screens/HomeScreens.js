@@ -17,9 +17,9 @@ const HomeScreens = () => {
     const date = new Date()
     return (
         <View className="flex-1 flex-col justify-center item" style={{backgroundColor:Color.Putih}}>
-            <View className="flex px-5" style={{backgroundColor: Color.Putih}}>
+            <View className="flex px-5 " style={{backgroundColor: Color.Putih}}>
                 <SafeAreaView>
-                    <View className="p-5 flex-col bg-white rounded-2xl mt-3" style={{elevation:3}}>
+                    <View className="p-5 flex-col bg-white rounded-2xl mt-3 shadow-sm shadow-gray-300" style={{elevation:3}}>
                         <View className="flex-row justify-between">
                             <View className="flex-col items-start">
                                 <Text className="text-xl" style={{fontFamily:'regular'}}>Selamat Pagi</Text>
@@ -37,7 +37,7 @@ const HomeScreens = () => {
                                 data={Data}
                                 renderItem={
                                     ({item}) => (
-                                        <View className="mx-1">
+                                        <View className="mx-0.5">
                                             <ActionButton btnName={item.btnName} icon={item.icon} />
                                         </View>
                                     )
@@ -49,7 +49,7 @@ const HomeScreens = () => {
             </View>
             <View className="flex-1 px-6 pt-6 mt-6" style={{borderTopLeftRadius:50, borderTopRightRadius:50, backgroundColor:Color.Hijau}} >
                 <View className="flex-row justify-between">
-                    <TouchableOpacity  onPress={() => navigation.navigate('Hadir')}>
+                    <TouchableOpacity>
                         <KehadiranButton text="Hadir" />
                     </TouchableOpacity>
                     <KehadiranButton text="Pulang"/>

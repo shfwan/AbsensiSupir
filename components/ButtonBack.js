@@ -7,7 +7,7 @@ import Color from '../constants/Color'
 const ButtonBack = (props) => {
     const navigation = useNavigation()
     return (
-        <View className="flex-row items-center gap-x-4">
+        <View className="flex-row items-center gap-x-4 shadow-sm shadow-gray-300">
             <TouchableOpacity className="px-4 py-2 rounded-xl bg-white" style={{elevation: 3}} onPress={() => { navigation.goBack() }} activeOpacity={0.8} >
                 <ArrowLeft stroke={Color.Hijau}/>
             </TouchableOpacity>
