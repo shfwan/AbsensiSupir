@@ -8,6 +8,7 @@ import KehadiranButton from '../components/KehadiranButton'
 import Status from '../components/Status'
 import { TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import HadirScreens from './HadirScreens'
 
 const HomeScreens = () => {
     const navigation = useNavigation()
@@ -34,6 +35,7 @@ const HomeScreens = () => {
                         <View className="bg-white items-center justify-center my-5">
                             <FlatList
                                 horizontal
+                                showsHorizontalScrollIndicator={false}
                                 data={Data}
                                 renderItem={
                                     ({item}) => (
@@ -49,10 +51,11 @@ const HomeScreens = () => {
             </View>
             <View className="flex-1 px-6 pt-6 mt-6" style={{borderTopLeftRadius:50, borderTopRightRadius:50, backgroundColor:Color.Hijau}} >
                 <View className="flex-row justify-between">
-                    <TouchableOpacity>
-                        <KehadiranButton text="Hadir" />
-                    </TouchableOpacity>
-                    <KehadiranButton text="Pulang"/>
+                    <HadirScreens/>
+                    <TouchableOpacity className={window.width < 390 ? "py-4 w-36 rounded-full shadow-sm shadow-gray-300" : "py-4 w-40 rounded-full shadow-sm shadow-gray-300"} style={{backgroundColor:Color.Putih, elevation:3}}
+                        >
+                        <KehadiranButton text="Pulang"/>
+                        </TouchableOpacity>
                 </View>
                 <View className="mt-6 mb-3 flex-row gap-x-1">
                     <Text className="text-lg text-white" style={{fontFamily:'regular'}}>Absensi bulan</Text>

@@ -72,3 +72,11 @@ export const data = [
     {nama: "asril", tanggal: "5 September 2023", category: "Izin"},
     {nama: "cika", tanggal: "4 September 2023", category: "Izin"},
 ]
+
+export const imagesDataURL = [
+    'https://i.ibb.co/v1xMtzZ/Mobil1.jpg'
+]
+
+export const imageData = [
+    'https://i.ibb.co/7Yn5vns/People1.jpg'
+]

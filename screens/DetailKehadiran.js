@@ -32,8 +32,8 @@ const DetailKehadiran = () => {
                         <Text className="text-base" style={{color:Color.Putih, fontFamily:'regular'}}>08:45 WIT</Text>
                     </View>
                     <View className="items-center">
-                        <Text className="text-base" style={{color:Color.Putih, fontFamily:'regular'}}>Jam Masuk</Text>
-                        <Text className="text-base" style={{color:Color.Putih, fontFamily:'regular'}}>08:45 WIT</Text>
+                        <Text className="text-base" style={{color:Color.Putih, fontFamily:'regular'}}>Jam Keluar</Text>
+                        <Text className="text-base" style={{color:Color.Putih, fontFamily:'regular'}}>17:00 WIT</Text>
                     </View>
                 </View>
                 <View className="rounded-md mb-3" style={{overflow:'hidden'}}>

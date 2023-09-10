@@ -1,5 +1,5 @@
 import { View, Text, ScrollView , TouchableOpacity, Image, ImageBackground} from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import Color from '../constants/Color'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Phone from '../assets/svg/iconPhone.svg'
@@ -13,9 +13,27 @@ import ButtonBack from '../components/ButtonBack'
 import Check from '../assets/svg/iconCentang.svg'
 import Location from '../assets/svg/iconLocation.svg'
 import Age from '../assets/svg/iconAge.svg'
+import * as ImagePicker from 'expo-image-picker'
+import { imageData } from '../constants/Data'
+import Camera from '../assets/svg/iconCamera.svg'
+
 
 
 const ProfileScreens = () => {
+    const [selectedImage, setSelectedImage] = useState(imageData[0])
+
+    const handleImageSelection = async() => {
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [4, 4],
+            quality: 1,
+        })
+
+        if (!result.canceled) {
+            setSelectedImage(result.assets[0].uri);
+        }
+    }
     return (
         <View className="flex-1 bg-white">
             <ImageBackground
@@ -23,16 +41,46 @@ const ProfileScreens = () => {
                 resizeMode='cover'
                 style={{height:500}}
             >
-                <SafeAreaView className="flex  mb-10 p-4">
+                <SafeAreaView className="flex   p-4">
                     <TouchableOpacity>
                         <ButtonBack/>
                     </TouchableOpacity>
                 </SafeAreaView>
-                <View className="flex px-6 pt-8 mt-8">
+                <View className="flex px-6 ">
                     <View className="items-center justify-center">
-                        <Image 
-                            source={require("../assets/images/People1.jpeg")}
-                            style={{height:170, width:170, borderRadius:85, borderWidth:4, borderColor:Color.Putih, marginTop:-100}}/>
+                    <View style={{
+                        alignItems:'center',
+                    }}>
+                        <TouchableOpacity onPress={handleImageSelection} >
+                            <Image
+                            source={{uri: selectedImage}}
+                            style={{
+                                height:170,
+                                width:170,
+                                borderRadius:85,
+                                borderWidth:4,
+                                borderColor:Color.Putih
+                            }}
+                            />
+                            <View style={{
+                                position:'absolute',
+                                bottom:0,
+                                right:10,
+                                zIndex:9999,
+                                width:40,
+                                height:40,
+                                borderRadius:20,
+                                alignItems:'center',
+                                justifyContent:'center',
+                                backgroundColor:Color.Putih
+                            }}>
+                                <Camera
+                                fill={Color.Hijau}
+                                
+                                />
+                            </View>
+                        </TouchableOpacity>
+                </View>
                         <Text className="text-2xl mt-3" style={{fontFamily:'regular', color:Color.Putih}}>Ali Putuhena</Text>
                     </View>
                     <View className="flex-row justify-center items-center my-2">
